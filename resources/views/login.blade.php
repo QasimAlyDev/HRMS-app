@@ -17,7 +17,7 @@
     <div class="login-box">
       <div class="login-logo">
         <a href="#">
-          <b>Admin</b>LTE </a>
+          <b>Human</b>Resources </a>
       </div>
       <!-- /.login-logo -->
       <div class="card">
