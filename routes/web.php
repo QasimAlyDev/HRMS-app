@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [AuthController::class, 'index']);
+Route::get('forget-password', [AuthController::class, 'forget_password']);
