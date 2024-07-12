@@ -48,13 +48,14 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-                <p class="mb-1">
-                    <a href="{{ url('/') }}">Sign In</a>
-                </p>
-                <p class="mb-0">
-                    <a href="{{ url('register') }}" class="text-center">Register a new membership</a>
-                </p>
+                <div class="d-flex justify-content-between mt-3">
+                    <p class="mb-1">
+                        <a href="{{ url('/') }}">Sign In</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="{{ url('register') }}" class="text-center">Not Register? Sign Up</a>
+                    </p>
+                </div>
             </div>
             <!-- /.login-card-body -->
         </div>
