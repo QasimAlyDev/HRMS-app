@@ -132,6 +132,17 @@
     <script src="{{ asset('backend/dist/js/customJS/removeError.js') }}"></script>
 
     <script type="text/javascript">
+
+        $(document).ready(function () {
+            // Clear validation errors on input focus
+            $('.form-control').on('input', function () {
+                var input = $(this);
+                if (input.val()) {
+                    input.removeClass('is-invalid');
+                    input.siblings('.invalid-feedback').remove();
+                } 
+            });
+        });
         function duplicateEmail(element){
             var email = $(element).val();
             $.ajax({
