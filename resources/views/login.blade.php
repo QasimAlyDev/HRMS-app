@@ -61,10 +61,14 @@
         </form>
         <div class="d-flex justify-content-between mt-3">
           <p class="mb-0">
-            <a href="{{ url('register') }}" class="text-center">Not Register? Sign  Up</a>
+            <a href="{{ url('register') }}" class="text-center" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+              Not Register? Sign  Up
+            </a>
           </p>
           <p class="mb-1">
-            <a href="{{ url('forgot-password') }}">Forgot Password</a>
+            <a href="{{ url('forgot-password') }}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+              Forgot Password
+            </a>
           </p>
         </div>
       </div>

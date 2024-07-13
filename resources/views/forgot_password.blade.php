@@ -50,10 +50,14 @@
                 </form>
                 <div class="d-flex justify-content-between mt-3">
                     <p class="mb-1">
-                        <a href="{{ url('/') }}">Sign In</a>
+                        <a href="{{ url('/') }}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+                            Sign In
+                        </a>
                     </p>
                     <p class="mb-0">
-                        <a href="{{ url('register') }}" class="text-center">Not Register? Sign Up</a>
+                        <a href="{{ url('register') }}" class="text-center" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+                            Not Register? Sign Up
+                        </a>
                     </p>
                 </div>
             </div>
