@@ -128,8 +128,6 @@
     <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
-    <!-- form validation , clear errors -->
-    <script src="{{ asset('backend/dist/js/customJS/removeError.js') }}"></script>
 
     <script type="text/javascript">
 
