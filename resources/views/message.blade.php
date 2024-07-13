@@ -27,6 +27,13 @@
         });
 </script>
 @endif
+@if(session('error'))
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            toastr.error('{{ session('error') }}');
+        });
+</script>
+@endif
 
 
 {{-- jquery linkS --}}

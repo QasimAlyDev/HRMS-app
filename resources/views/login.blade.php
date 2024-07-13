@@ -24,27 +24,42 @@
     </div>
     <!-- /.login-logo -->
     <div class="card">
-      
+
       @include('message')
 
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
-        <form action="" method="post">
+        <form action="{{ url('login_post') }}" method="post">
+
+          {{ csrf_field() }}
+
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" name="email" required value="{{ old('email') }}"
+              class="form-control @error('email') is-invalid @enderror" placeholder="Email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
               </div>
             </div>
+            @error('email')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+              placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
             </div>
+            @error('password')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="row">
             <div class="col-8">
@@ -61,12 +76,14 @@
         </form>
         <div class="d-flex justify-content-between mt-3">
           <p class="mb-0">
-            <a href="{{ url('register') }}" class="text-center" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-              Not Register? Sign  Up
+            <a href="{{ url('register') }}" class="text-center" onmouseover="this.style.textDecoration='underline';"
+              onmouseout="this.style.textDecoration='none';">
+              Not Register? Sign Up
             </a>
           </p>
           <p class="mb-1">
-            <a href="{{ url('forgot-password') }}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+            <a href="{{ url('forgot-password') }}" onmouseover="this.style.textDecoration='underline';"
+              onmouseout="this.style.textDecoration='none';">
               Forgot Password
             </a>
           </p>
@@ -82,6 +99,22 @@
   <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <!-- AdminLTE App -->
   <script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+        // Clear validation errors on input focus
+        $('.form-control').on('input', function () {
+            var input = $(this);
+            if (input.val()) {
+                input.removeClass('is-invalid');
+                input.siblings('.invalid-feedback').remove();
+            } 
+        });
+    });
+
+</script>
+
 </body>
 
 </html>

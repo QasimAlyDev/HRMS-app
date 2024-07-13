@@ -145,7 +145,7 @@
             var email = $(element).val();
             $.ajax({
                 type : "POST",
-                url  : '{{ url('check-email') }}',
+                url  : '{{ url('checkEmail') }}',
                 data : {
                         email : email,
                         _token: "{{ csrf_token() }}"
