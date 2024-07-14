@@ -137,7 +137,7 @@
                 var input = $(this);
                 if (input.val()) {
                     input.removeClass('is-invalid');
-                    input.siblings('.invalid-feedback').remove();
+                    input.siblings('.invalid-feedback').hide();
                 } 
             });
         });

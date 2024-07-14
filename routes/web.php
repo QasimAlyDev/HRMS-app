@@ -26,5 +26,5 @@ Route::post('login_post' , [AuthController::class, 'login_post']);
 // Admin || HR same name
 
 Route::group(['middleware' => 'admin'], function(){
-    Route::get('admin/dashboard', [DashboardController::class], 'dashboard');
+    Route::get('admin/dashboard', [DashboardController::class , 'dashboard']);
 }); 
