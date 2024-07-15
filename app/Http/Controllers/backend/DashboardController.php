@@ -9,6 +9,6 @@ class DashboardController extends Controller
 {
     public function dashboard(Request $request)
     {
-        echo "Login";
+        return view('backend.dashboard.list');
     }
 }
