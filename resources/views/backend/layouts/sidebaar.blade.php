@@ -53,7 +53,8 @@
                         data-accordion="false">
                         
                         <li class="nav-item">
-                            <a href="{{ url('admin/dashboard') }}" class="nav-link active" >
+                            <a href="{{ url('admin/dashboard') }}" class="nav-link 
+                            @if (Request::segment(2) == 'dashboard') active @endif">
                                 <i class="nav-icon fa fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -61,7 +62,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/employees') }}" class="nav-link" >
+                            <a href="{{ url('admin/employees') }}" class="nav-link
+                            @if (Request::segment(2) == 'employees') active @endif">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p>
                                     Employees
