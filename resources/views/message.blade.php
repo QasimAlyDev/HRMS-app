@@ -1,4 +1,3 @@
-{{-- jquery link --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <style>
     .toast {
@@ -23,19 +22,27 @@
 @if(session('success'))
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-            toastr.success('{{ session('success') }}');
-        });
+        toastr.success('{{ session('success') }}');
+    });
 </script>
 @endif
+
 @if(session('error'))
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-            toastr.error('{{ session('error') }}');
-        });
+        toastr.error('{{ session('error') }}');
+    });
 </script>
 @endif
 
+@if(session('delete'))
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        toastr.warning('{{ session('delete') }}');
+    });
+</script>
+@endif
 
-{{-- jquery linkS --}}
+{{-- jQuery links --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

@@ -93,8 +93,8 @@
                                                             data-bs-toggle="tooltip" title="Edit">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-sm btn-outline-danger m-1"
-                                                            data-bs-toggle="tooltip" title="Delete">
+                                                        <a href="{{ url('admin/employees/delete/'.$value->id) }}" class="btn btn-sm btn-outline-danger m-1"
+                                                            onclick="return confirm('Are you sure you want to deleted?')" data-bs-toggle="tooltip" title="Delete">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>
