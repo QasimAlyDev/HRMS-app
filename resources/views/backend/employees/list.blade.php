@@ -80,12 +80,12 @@
                                             <tr>
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->name }}</td>
-                                                <td>{{ $value->last_name }}</td>
+                                                <td>{!! !empty($value->last_name) ? $value->last_name : '<p class="text-danger">No Available</p>' !!}</td>
                                                 <td>{{ $value->email }}</td>
                                                 <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
                                                 <td>
                                                     <div class="d-flex flex-wrap">
-                                                        <a href="#" class="btn btn-sm btn-outline-info m-1"
+                                                        <a href="{{ url('admin/employees/view/'.$value->id) }}" class="btn btn-sm btn-outline-info m-1"
                                                             data-bs-toggle="tooltip" title="View">
                                                             <i class="fas fa-eye"></i>
                                                         </a>

@@ -46,4 +46,9 @@ class EmployeesController extends Controller
 
         return redirect('admin/employees')->with('success' , 'Employee Successfully Resgister.');
     }
+    public function view($id)
+    {
+        $data['getRecord'] = User::find($id);
+        return view('backend.employees.view',$data);
+    }
 }
