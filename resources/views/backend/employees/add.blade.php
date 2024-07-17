@@ -70,7 +70,7 @@
                             <div class="form-group row">
                                 <label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="phone_number"
+                                    <input type="number" class="form-control" name="phone_number"
                                     placeholder="Enter Phone Number" value="{{old('phone_number')}}">
                                 </div>
                             </div>        
@@ -110,7 +110,7 @@
                                     <span style="color:red;">*</span>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('salary') is-invalid @enderror" name="salary"
+                                    <input type="number" class="form-control @error('salary') is-invalid @enderror" name="salary"
                                     placeholder="Enter Salary" value="{{old('salary')}}" required>
                                     @error('salary')
                                     <div class="invalid-feedback">
@@ -124,7 +124,7 @@
                                     <span style="color:red;">*</span>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('commission_pct') is-invalid @enderror" name="commission_pct"
+                                    <input type="number" class="form-control @error('commission_pct') is-invalid @enderror" name="commission_pct"
                                     placeholder="Enter Commission PCT" value="{{old('commission_pct')}}" required>
                                     @error('commission_pct')
                                     <div class="invalid-feedback">
