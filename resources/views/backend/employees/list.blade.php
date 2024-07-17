@@ -85,15 +85,15 @@
                                                 <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
                                                 <td>
                                                     <div class="d-flex flex-wrap">
-                                                        <a href="#" class="btn btn-sm btn-info m-1"
+                                                        <a href="#" class="btn btn-sm btn-outline-info m-1"
                                                             data-bs-toggle="tooltip" title="View">
                                                             <i class="fas fa-eye"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-sm btn-primary m-1"
+                                                        <a href="#" class="btn btn-sm btn-outline-primary m-1"
                                                             data-bs-toggle="tooltip" title="Edit">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-sm btn-danger m-1"
+                                                        <a href="#" class="btn btn-sm btn-outline-danger m-1"
                                                             data-bs-toggle="tooltip" title="Delete">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
