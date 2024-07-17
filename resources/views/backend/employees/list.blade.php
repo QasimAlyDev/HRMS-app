@@ -89,7 +89,7 @@
                                                             data-bs-toggle="tooltip" title="View">
                                                             <i class="fas fa-eye"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-sm btn-outline-primary m-1"
+                                                        <a href="{{ url('admin/employees/edit/'.$value->id) }}" class="btn btn-sm btn-outline-primary m-1"
                                                             data-bs-toggle="tooltip" title="Edit">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
