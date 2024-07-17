@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('backend.employees.list');
+        $data['getRecord'] = User::getRecord($request);
+        return view('backend.employees.list', $data);
     }
     public function addEmployee(Request $request)
     {
