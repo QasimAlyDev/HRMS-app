@@ -45,12 +45,12 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="salary">Min Salary</label>
-                                        <input type="text" name="name" class="form-control"
+                                        <input type="text" name="min_salary" class="form-control"
                                             value="{{ request()->min_salary }}" placeholder="Min Salary">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="salary">Max Salary</label>
-                                        <input type="text" name="name" class="form-control"
+                                        <input type="text" name="max_salary" class="form-control"
                                             value="{{ request()->max_salary }}" placeholder="Max Salary">
                                     </div>
                                     <div class="form-group col-md-2">
@@ -76,22 +76,21 @@
                                         <th>Min Salary</th>
                                         <th>Max Salary</th>
                                         <th>Created At</th>
-                                        <th>Updated At</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @forelse ($getRecord as $value)
+                                        
                                     <tr>
-                                        <td>1</td>
-                                        <td>web development</td>
-                                        <td>100000</td>
-                                        <td>1000000</td>
-                                        <td>18-07-2024</td>
-                                        <td>18-07-2024</td>
+                                        <td>{{ $value->id }}</td>
+                                        <td>{{ $value->job_title }}</td>
+                                        <td>{{ $value->min_salary }}</td>
+                                        <td>{{ $value->max_salary }}</td>
+                                        <td>{{ date('d-m-Y H:i A' , strtotime($value->created_at)) }}</td>
                                         <td>
                                             <div class="d-flex flex-wrap">
-                                                <a href=""
+                                                <a href="{{ url('admin/jobs/view/'.$value->id) }}"
                                                     class="btn btn-sm btn-outline-info m-1" data-bs-toggle="tooltip"
                                                     title="View">
                                                     <i class="fas fa-eye"></i>
@@ -110,16 +109,19 @@
                                             </div>
                                         </td>
                                     </tr> 
-                                    {{-- @empty 
+                                    
+                                    @empty 
                                     <tr>
                                         <td colspan="100%" style="text-align: center"> No Record Found. </td>
-                                    </tr> --}}
+                                    </tr>
+                                        
+                                    @endforelse
                                     
                                 </tbody>
                             </table>
-                            {{-- <div style="padding:10px; float: right;">
+                            <div style="padding:10px; float: right;">
                                 {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </section>

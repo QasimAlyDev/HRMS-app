@@ -44,7 +44,7 @@ class EmployeesController extends Controller
         $user->is_role          = 0; // 0 - Employees
         $user->save();
 
-        return redirect('admin/employees')->with('success' , 'Employee Successfully Resgister.');
+        return redirect('admin/employees')->with('success' , 'Employee Successfully Register.');
     }
     public function view($id)
     {

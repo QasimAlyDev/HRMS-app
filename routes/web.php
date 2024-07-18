@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\backend\JobsController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\EmployeesController;
+use App\Models\JobsModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::group(['middleware' => 'admin'], function(){
 
     // Job route
     Route::get('admin/jobs', [JobsController::class , 'index']);
+    Route::get('admin/jobs/add', [JobsController::class , 'add']);
+    Route::post('admin/jobs/add', [JobsController::class , 'add_post']);
+    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view']);
 
 }); 
 

@@ -67,7 +67,7 @@ class User extends Authenticatable
         }
         // search box end
 
-        $records = $query->orderBy('id' , 'asc')
+        $records = $query->orderBy('id' , 'desc')
                     ->paginate(10);
         return $records ;
 
