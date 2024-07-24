@@ -74,10 +74,10 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="form-group col-md-4 border">
-                                        <label>Created Date</label> : {!! !empty($getRecord->created_at) ? date('d-m-Y H:i A', strtotime($getRecord->created_at)) : '<span class="text-danger">No Available</span>' !!}
+                                        <label>Created Date</label> : {!! !empty($getRecord->created_at) ? \Carbon\Carbon::parse($getRecord->created_at)->format('d-m-Y h:i A') : '<span class="text-danger">No Available</span>' !!}
                                     </div>
                                     <div class="form-group col-md-4 border">
-                                        <label>Updated Date</label> : {!! !empty($getRecord->updated_at) ? date('d-m-Y H:i A', strtotime($getRecord->updated_at)) : '<span class="text-danger">No Available</span>' !!}
+                                        <label>Updated Date</label> : {!! !empty($getRecord->updated_at) ? \Carbon\Carbon::parse($getRecord->updated_at)->format('d-m-Y h:i A') : '<span class="text-danger">No Available</span>' !!}
                                     </div>
                                 </div>
                             </div>

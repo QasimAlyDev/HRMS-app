@@ -46,12 +46,10 @@
                                         <label> Max Salary </label> : {{ $getRecord->max_salary }}
                                     </div>
                                     <div class="form-group col-md-4 border">
-                                        <label> Created Date </label> : {{ date('d-m-Y H:i A' ,
-                                        strtotime($getRecord->created_at)) }}
+                                        <label> Created Date </label> : {{ \Carbon\Carbon::parse($getRecord->created_at)->format('d-m-Y h:i A') }}
                                     </div>
                                     <div class="form-group col-md-4 border">
-                                        <label> Updated Date </label> : {{ date('d-m-Y H:i A' ,
-                                        strtotime($getRecord->updated_at)) }}
+                                        <label> Updated Date </label> : {{ \Carbon\Carbon::parse($getRecord->updated_at)->format('d-m-Y h:i A') }}
                                     </div>
                                 </div>
                             </div>

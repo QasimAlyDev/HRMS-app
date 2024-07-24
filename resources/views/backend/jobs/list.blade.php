@@ -87,7 +87,7 @@
                                         <td>{{ $value->job_title }}</td>
                                         <td>{{ $value->min_salary }}</td>
                                         <td>{{ $value->max_salary }}</td>
-                                        <td>{{ date('d-m-Y H:i A' , strtotime($value->created_at)) }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y h:i A') }}</td>
                                         <td>
                                             <div class="d-flex flex-wrap">
                                                 <a href="{{ url('admin/jobs/view/'.$value->id) }}"
