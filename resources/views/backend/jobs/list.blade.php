@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="Job Title">Job Title</label>
-                                        <input type="text" name="name" class="form-control"
+                                        <input type="text" name="job_title" class="form-control"
                                             value="{{ request()->job_title }}" placeholder="Job Title">
                                     </div>
                                     <div class="form-group col-md-3">
@@ -100,7 +100,7 @@
                                                     title="Edit">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                                <a href=""
+                                                <a href="{{ url('admin/jobs/delete/'.$value->id) }}"
                                                     class="btn btn-sm btn-outline-danger m-1"
                                                     onclick="return confirm('Are you sure you want to deleted?')"
                                                     data-bs-toggle="tooltip" title="Delete">
