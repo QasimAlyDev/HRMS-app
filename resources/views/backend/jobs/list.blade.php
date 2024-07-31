@@ -95,7 +95,7 @@
                                                     title="View">
                                                     <i class="fas fa-eye"></i>
                                                 </a>
-                                                <a href=""
+                                                <a href="{{ url('admin/jobs/edit/'.$value->id) }}"
                                                     class="btn btn-sm btn-outline-primary m-1" data-bs-toggle="tooltip"
                                                     title="Edit">
                                                     <i class="fas fa-edit"></i>

@@ -13,7 +13,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Add</a></li>
+                        <li class="breadcrumb-item"><a href="#">Edit</a></li>
                         <li class="breadcrumb-item active">Jobs</li>
                     </ol>
                 </div><!-- /.col -->
@@ -27,9 +27,9 @@
                 <section class="col-lg-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Add Job</h3>
+                            <h3 class="card-title">Edit Job</h3>
                         </div>
-                        <form class="form-horizontal" method="post" accept="{{ url('admin/jobs/add') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="post" action="{{ url('admin/jobs/edit/'.$getRecord->id) }}" enctype="multipart/form-data">
 
                         @csrf
 
@@ -39,7 +39,7 @@
                                     Job Title <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('job_title') is-invalid @enderror" name="job_title"
-                                    placeholder="Enter Job Title" value="{{old('job_title')}}" required>
+                                    placeholder="Enter Job Title" value="{{ $getRecord->job_title }}" required>
                                     @error('job_title')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -51,7 +51,7 @@
                                 <label for="salary" class="col-sm-2 col-form-label">Min Salary <span style="color:red;">*</span></label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control @error('min_salary') is-invalid @enderror" name="min_salary"
-                                    placeholder="Enter Min Salary" value="{{old('min_salary')}}">
+                                    placeholder="Enter Min Salary" value="{{ $getRecord->min_salary }}">
                                     @error('min_salary')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -60,10 +60,10 @@
                                 </div>
                             </div>        
                             <div class="form-group row">
-                                <label for="salary" class="col-sm-2 col-form-label">Max Salary <span style="color:red;">*</span></label>
+                                <label for="salary" class="col-sm-2 col-form-label">Max Salary <span style="color:red;">*</span>    </label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control @error('max_salary') is-invalid @enderror" name="max_salary"
-                                    placeholder="Enter Max Salary" value="{{old('max_salary')}}">
+                                    placeholder="Enter Max Salary" value="{{ $getRecord->max_salary }}">
                                     @error('max_salary')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -73,7 +73,7 @@
                             </div>                   
                             <div class="card-footer">
                                 <a href="{{ url('admin/jobs') }}" class="btn btn-default">Back</a>
-                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                <button type="submit" class="btn btn-primary float-right">Update</button>
                             </div>      
                         </form>
                     </div>
