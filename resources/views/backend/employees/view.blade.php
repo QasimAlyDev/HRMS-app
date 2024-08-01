@@ -52,7 +52,8 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="form-group col-md-4 border">
-                                        <label>Job Title</label> : {!! !empty($getRecord->job_id) ? $getRecord->job_id : '<span class="text-danger">No Available</span>' !!}
+                                        <label>Job Title</label> : {!! !empty($getRecord->get_job_single->job_title)
+                                            ? $getRecord->get_job_single->job_title : '<span class="text-danger">No Available</span>'!!}
                                     </div>
                                     <div class="form-group col-md-4 border">
                                         <label>Salary</label> : {!! !empty($getRecord->salary) ? $getRecord->salary : '<span class="text-danger">No Available</span>' !!}
